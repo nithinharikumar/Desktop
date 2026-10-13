@@ -1,0 +1,20 @@
+{
+  "name": "photo-gatekeeper",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Photo Upload Quality Gatekeeper - Modular Monolith",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "build": "npm --prefix server run build && npm --prefix client run build",
+    "start": "npm --prefix server run start",
+    "test": "npm --prefix server run test && npm --prefix client run test",
+    "lint": "npm --prefix server run lint && npm --prefix client run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

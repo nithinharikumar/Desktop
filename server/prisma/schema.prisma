@@ -1,0 +1,40 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum ImageStatus {
+  PROCESSING
+  ACCEPTED
+  REJECTED
+  FAILED
+}
+
+model Image {
+  id               String       @id @default(uuid()) @db.Uuid
+  ownerId          String
+  originalName     String
+  mimeType         String
+  sizeBytes        BigInt
+  width            Int?
+  height           Int?
+  storageKey       String
+  processedKey     String?
+  thumbnailKey     String?
+  status           ImageStatus  @default(PROCESSING)
+  rejectionReasons String[]
+  phash            Unsupported("bit(64)")?
+  blurScore        Float?
+  faceCount        Int?
+  faceAreaRatio    Float?
+  attempts         Int          @default(0)
+  createdAt        DateTime     @default(now())
+  processedAt      DateTime?
+
+  @@index([ownerId, status, createdAt(sort: Desc)])
+  @@map("images")
+}
