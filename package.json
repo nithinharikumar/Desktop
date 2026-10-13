@@ -1,8 +1,8 @@
 {
-  "name": "photo-gatekeeper",
+  "name": "image-gatekeeper",
   "version": "1.0.0",
   "private": true,
-  "description": "Photo Upload Quality Gatekeeper - Modular Monolith",
+  "description": "Image Gatekeeper - Photo Upload Quality Pipeline (Modular Monolith)",
   "workspaces": [
     "server",
     "client"

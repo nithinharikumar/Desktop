@@ -34,7 +34,7 @@ export default function App() {
   return (
     <div className="app-container">
       <header className="header">
-        <h1>Photo Quality Gatekeeper</h1>
+        <h1>Image Gatekeeper</h1>
         <p>
           Automated multi-stage validation for AI headshot training (blur, face count, frame area, resolution, and duplicate detection)
         </p>

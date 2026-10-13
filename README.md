@@ -1,6 +1,8 @@
-# Photo Quality Gatekeeper (Modular Monolith)
+# Image Gatekeeper (Photo Quality Pipeline)
 
 A high-performance photo upload quality gatekeeper designed to validate and filter selfie batches before AI model training or headshot generation.
+
+See [TECH_STACK.md](./TECH_STACK.md) for a comprehensive breakdown of technologies used and architectural justifications.
 
 ---
 
